@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ระบบบันทึกข้อมูลยานพาหนะ ค่ายภูมิพล</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAAA+CAMAAAC/SK2pAAAASFBMVEUAAADWr0jw5iLrGiPLoTqbci4ZN5KwjzKjlWcuRoxqVymobyfLnDZaaIVqbXa4iTFXMSPXXiuqqlXQmit8cQX//wBhJgi8jzUYrpRjAAAAGHRSTlMA/f7/8f79/v7+/xqk/v5i//4DZQYBC5gb80uEAAAFA0lEQVR42p2YiYLbIAxEIQWDAR+5//9POyNhB6eJvVtlcznmIY3Etcbs2T3j5VEmfr6Y/7YsL5Oztkz6+X7/Pwgoxaq5Mj300u23qEcuThjBB6esaxb+D1GXrK4oxQVPC0G/uRrkDwWbXI0nKIYkuFWvFqIOxbqbqTzRwjWEiOfyDVEaV5DHA9LFPMUVaRQDPHLeysMtMA1yOvIna0yeDAKCpU94D9546o7PEl/N6/e0a6JCBMVLO+/1qSg+FLRrtwWENgrw5/OZLyoXwkWQ4vMRyDhxSNQ4/3mzs4rEW1w+Kqf8VFDwfz7YAppyPiwih7ITVT5wzqGCyg8GmVVQ0MDMhnPiDyxMdzscqxNBKOnKSXPLOZ3wiyPpOLIioHMVOrkwwyk+hSMogqb9OkJB0u81XQn9BzPPAY5VjqAo0mV/hEwsooUzo/Mwp8RczaeXQe4DkTIjW/0x5BjvUjKzD8m9SCLSZTc0Z1zLcXMCxydwQmp8OhQpvxwywZJj/QweMEh861I5TP7CSZA0kROY8gTBw8alvDMlXSjRkrCIcJIN5OCB6NrQJLYdkZD8GtnsfUxGODSS3jx6fhdJkq+gGZIwmkShyEFgG7Xd3kSSX5Eh38n4YFJdPGTu/0ek297IX4sRUxsET5jJWJEsqTfQ1wK4tclndIYAqetEyTf5P+1MJfklkZJmDo0ksyW84TqyFemxN/I38xgkZ/Y4/Pxs7QZ02plKHo1EOv8koKIuK+mtkL6LlLcScV5l+n1dVqh52sb2bSrJ1xZkuCChhBaP+BrbqoT7+UttP18SzX41KSWUIyzC1gA/lyRKS7ZDbpU5+dYWTAw2rRpxX3L/Z+hm3bTUuKSlDjOuBHVDIxbDCoLe93e9n5NtQMqpJrCG5BuQezzbkXKHO0bvOutc5P0baCFFG1XvuqEzbYFLSRu3krAOhmTa4JrATMuxT5TMsnmlWCVGrmcT43Oy7qCEvtiCcciyKWxp6mSJYnCmB4a6ib81vy68mavX5aYbp51gezSWwnTYxF2c6UaMwYwvpUF9sCXMJ5zhoBo7gswU0LAwtK6LbnLRXlFPOpd9h0gBFYuYnLQDBxDRBqC+i2bsBmKXnbpz2zWxwTyKRQMnzcqk+5w4REtyH0dc7tlBc3TQMFsKpby62HdwJvLFWSAoEtoPAy7gvcfPo+7I170/UPZ1IMk6b41dN/RKGsYeAlMnC0rl4J1OKQqnkaksNOzRl90e1Ol527D41PWy7cZ01i+c3gy4RVDXvJ5tuGVcpxrBCCeKQhRF5gGUAH6Kcezlso3iWD+StRy26gHrSsrIX+k2DL2ObGwFI6eGiIa4HCm9xCesGHHsuNIKYozSm9owGHg09NIQRSUz3OXhTBxxgf0MA/6ovjTph3E07NuMY70i9xAScZNlO1Tk5V7XM2dH1IHt+9jR4ziYXlO4Mf1OiI0iFDhm3OzdSWJuWEnoDgEORrtvDeU6SF+4Bb9pC3Kaye3BAnwWI3VmpE9jhjePhqju9uIOQnpqmV82U/bEQzmKfWSLXu83FlqpDUg3ZGEPwocnQEzl27mNRSMJ7gyCAMpUL/QN0ojmYz2QfjoqX5p1e6wpEzXYniO0Y2kMUhfwpu7K985ZMvhrxVB6BMUAB00iK9WV/LNDtrldyXqV35J+lChP/4/f/IMDg4rzGKtZjBoR8rt/QtxyjZNjQ5aRwqGS1239B/sLry1GUIuT6KgAAAAASUVORK5CYII=">
+<meta name="theme-color" content="#2f3a1f">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --olive-900: #20281a;
+    --olive-800: #2f3a1f;
+    --olive-700: #3f4a24;
+    --olive-600: #55622f;
+    --olive-100: #e4e8d3;
+    --cream: #f6f2e4;
+    --cream-2: #fbf8ee;
+    --khaki: #b9ad82;
+    --gold: #c9a84c;
+    --gold-soft: #e3cf8f;
+    --ink: #1f2417;
+    --muted: #6a6f58;
+    --red: #b3261e;
+    --red-bg: #fdecea;
+    --ok: #2e6b34;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: 'Sarabun', 'Tahoma', sans-serif;
+    font-size: 17px; line-height: 1.5; color: var(--ink);
+    background-color: #4a5526;
+    background-image:
+      radial-gradient(ellipse 70px 42px at 14% 18%, #2a3219 96%, transparent 100%),
+      radial-gradient(ellipse 58px 36px at 62% 12%, #7d6a43 96%, transparent 100%),
+      radial-gradient(ellipse 80px 46px at 88% 34%, #2a3219 96%, transparent 100%),
+      radial-gradient(ellipse 64px 40px at 36% 44%, #6b6f3a 96%, transparent 100%),
+      radial-gradient(ellipse 52px 34px at 78% 62%, #4a3b27 96%, transparent 100%),
+      radial-gradient(ellipse 74px 44px at 12% 70%, #7d6a43 96%, transparent 100%),
+      radial-gradient(ellipse 60px 38px at 50% 80%, #2a3219 96%, transparent 100%),
+      radial-gradient(ellipse 68px 40px at 92% 92%, #6b6f3a 96%, transparent 100%),
+      radial-gradient(ellipse 46px 30px at 28% 92%, #4a3b27 96%, transparent 100%);
+    background-size: 360px 360px;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 18px 16px 90px;
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+  }
+  .wrap { width: 100%; max-width: 560px; }
+
+  /* ---------- การ์ดหลัก ---------- */
+  .card {
+    background: var(--cream);
+    border-radius: 20px;
+    border: 1px solid var(--gold);
+    box-shadow: 0 0 0 4px rgba(32,40,26,.55), 0 18px 40px rgba(0,0,0,.35);
+    overflow: hidden;
+  }
+  .head {
+    background: linear-gradient(180deg, var(--olive-800), var(--olive-900));
+    padding: 22px 20px 18px;
+    text-align: center;
+    border-bottom: 3px solid var(--gold);
+    position: relative;
+  }
+  .head img.logo { width: 86px; height: auto; display: block; margin: 0 auto 10px; filter: drop-shadow(0 3px 6px rgba(0,0,0,.45)); }
+  .head h1 { color: #fff; font-size: 23px; font-weight: 700; letter-spacing: .2px; }
+  .head p { color: var(--gold-soft); font-size: 15px; margin-top: 2px; }
+  .counter {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 12px; padding: 4px 14px;
+    border: 1px solid rgba(227,207,143,.55); border-radius: 999px;
+    color: var(--gold-soft); font-size: 14px; background: rgba(255,255,255,.05);
+  }
+  .counter b { color: #fff; font-size: 16px; }
+
+  .body { padding: 8px 20px 22px; }
+
+  /* ---------- หมวด ---------- */
+  .step { padding: 18px 0 6px; }
+  .step + .step { border-top: 1px solid rgba(185,173,130,.55); }
+  .step-title { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .num {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--olive-700); color: var(--gold-soft);
+    font-weight: 700; font-size: 15px;
+    display: grid; place-items: center; flex: none;
+    box-shadow: 0 0 0 2px var(--cream), 0 0 0 3px var(--gold);
+  }
+  .step-title h2 { font-size: 18px; font-weight: 700; color: var(--olive-800); }
+
+  .field { margin-bottom: 14px; }
+  .field label { display: block; font-weight: 600; font-size: 15px; margin-bottom: 5px; color: var(--olive-800); }
+  .req { color: var(--red); font-weight: 700; margin-left: 2px; }
+  .opt { color: var(--muted); font-weight: 400; font-size: 13px; margin-left: 6px; }
+  input, select {
+    width: 100%; height: 50px; padding: 0 14px;
+    font: inherit; font-size: 17px; color: var(--ink);
+    background: var(--cream-2);
+    border: 1.5px solid var(--khaki); border-radius: 12px;
+    transition: border-color .15s, box-shadow .15s, background .15s;
+    -webkit-appearance: none; appearance: none;
+  }
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%233f4a24' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 14px center; padding-right: 38px;
+  }
+  input::placeholder { color: #9a9c86; }
+  input:focus, select:focus { outline: none; border-color: var(--olive-600); background: #fff; box-shadow: 0 0 0 4px rgba(85,98,47,.18); }
+  .field.invalid input, .field.invalid select { border-color: var(--red); background: var(--red-bg); box-shadow: 0 0 0 3px rgba(179,38,30,.12); }
+  .err { display: none; color: var(--red); font-size: 14px; margin-top: 4px; }
+  .field.invalid .err { display: block; }
+  .hint { color: var(--muted); font-size: 13.5px; margin-top: 4px; }
+  .hint.warn { color: #8a5a00; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 480px) { .row { grid-template-columns: 1fr; gap: 0; } .body { padding: 6px 16px 20px; } }
+
+  /* ---------- ปุ่ม ---------- */
+  .btn-main {
+    width: 100%; height: 56px; margin-top: 8px;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: linear-gradient(180deg, var(--olive-600), var(--olive-800));
+    color: #fff; font: inherit; font-size: 18px; font-weight: 700;
+    border: 1px solid var(--gold); border-radius: 14px; cursor: pointer;
+    box-shadow: 0 6px 14px rgba(32,40,26,.3);
+    transition: transform .1s, filter .15s;
+  }
+  .btn-main:hover { filter: brightness(1.08); }
+  .btn-main:active { transform: translateY(1px); }
+  .btn-main:disabled { filter: grayscale(.6) brightness(.9); cursor: wait; }
+  .spin { width: 20px; height: 20px; border: 3px solid rgba(255,255,255,.35); border-top-color: #fff; border-radius: 50%; animation: sp .7s linear infinite; display: none; }
+  .loading .spin { display: block; }
+  @keyframes sp { to { transform: rotate(360deg); } }
+  .btn-ghost {
+    width: 100%; height: 46px; margin-top: 12px;
+    background: transparent; color: var(--olive-700);
+    font: inherit; font-size: 16px; font-weight: 500;
+    border: 1.5px solid var(--khaki); border-radius: 12px; cursor: pointer;
+    transition: all .15s;
+  }
+  .btn-ghost:hover { background: var(--olive-100); }
+  .btn-ghost.confirm { background: var(--red-bg); border-color: var(--red); color: var(--red); font-weight: 600; }
+
+  /* ---------- ประวัติ ---------- */
+  details.hist { background: var(--cream); border: 1px solid var(--gold); border-radius: 16px; box-shadow: 0 0 0 4px rgba(32,40,26,.55), 0 12px 28px rgba(0,0,0,.3); overflow: hidden; }
+  details.hist summary { list-style: none; cursor: pointer; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; font-weight: 700; color: var(--olive-800); font-size: 17px; }
+  details.hist summary::-webkit-details-marker { display: none; }
+  details.hist summary .chev { transition: transform .2s; color: var(--olive-600); }
+  details.hist[open] summary .chev { transform: rotate(180deg); }
+  .hist-body { padding: 0 20px 18px; border-top: 1px solid rgba(185,173,130,.55); }
+  .hist-note { color: var(--muted); font-size: 14px; margin: 12px 0 8px; }
+  .hist-list { list-style: none; max-height: 320px; overflow-y: auto; }
+  .hist-list li { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px dashed rgba(185,173,130,.7); font-size: 16px; }
+  .hist-list li:last-child { border-bottom: 0; }
+  .hist-list .t { color: var(--muted); font-size: 13.5px; white-space: nowrap; padding-top: 2px; }
+  .hist-empty { color: var(--muted); text-align: center; padding: 18px 0 6px; font-size: 15px; }
+  .hist-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+  .hist-actions button { flex: 1 1 30%; min-width: 96px; height: 44px; font: inherit; font-size: 15px; font-weight: 600; border-radius: 12px; cursor: pointer; border: 1.5px solid var(--olive-600); background: var(--olive-700); color: #fff; }
+  .hist-actions button.ghost { background: transparent; color: var(--olive-700); border-color: var(--khaki); font-weight: 500; }
+  .hist-actions button.ghost.confirm { background: var(--red-bg); border-color: var(--red); color: var(--red); }
+  .hist-actions button:disabled { opacity: .45; cursor: not-allowed; }
+
+  /* ---------- แถบแจ้งผล ---------- */
+  #toast {
+    position: fixed; left: 50%; bottom: 18px; transform: translate(-50%, 140%);
+    width: calc(100% - 28px); max-width: 520px; z-index: 50;
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 14px 16px; border-radius: 14px; color: #fff; font-size: 16px; font-weight: 500;
+    box-shadow: 0 12px 30px rgba(0,0,0,.4); transition: transform .3s ease;
+  }
+  #toast.show { transform: translate(-50%, 0); }
+  #toast.ok { background: var(--ok); border: 1px solid #8fd197; }
+  #toast.bad { background: var(--red); border: 1px solid #f2a29d; }
+  #toast .ic { font-size: 20px; line-height: 1.3; }
+  #toast .msg { flex: 1; }
+  #toast button { background: none; border: 0; color: #fff; font-size: 22px; line-height: 1; cursor: pointer; padding: 0 2px; display: none; }
+  #toast.bad button { display: block; }
+
+  
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="card">
+    <div class="head">
+      <img class="logo" alt="ตราค่ายภูมิพล" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAAA+CAMAAAC/SK2pAAAASFBMVEUAAADWr0jw5iLrGiPLoTqbci4ZN5KwjzKjlWcuRoxqVymobyfLnDZaaIVqbXa4iTFXMSPXXiuqqlXQmit8cQX//wBhJgi8jzUYrpRjAAAAGHRSTlMA/f7/8f79/v7+/xqk/v5i//4DZQYBC5gb80uEAAAFA0lEQVR42p2YiYLbIAxEIQWDAR+5//9POyNhB6eJvVtlcznmIY3Etcbs2T3j5VEmfr6Y/7YsL5Oztkz6+X7/Pwgoxaq5Mj300u23qEcuThjBB6esaxb+D1GXrK4oxQVPC0G/uRrkDwWbXI0nKIYkuFWvFqIOxbqbqTzRwjWEiOfyDVEaV5DHA9LFPMUVaRQDPHLeysMtMA1yOvIna0yeDAKCpU94D9546o7PEl/N6/e0a6JCBMVLO+/1qSg+FLRrtwWENgrw5/OZLyoXwkWQ4vMRyDhxSNQ4/3mzs4rEW1w+Kqf8VFDwfz7YAppyPiwih7ITVT5wzqGCyg8GmVVQ0MDMhnPiDyxMdzscqxNBKOnKSXPLOZ3wiyPpOLIioHMVOrkwwyk+hSMogqb9OkJB0u81XQn9BzPPAY5VjqAo0mV/hEwsooUzo/Mwp8RczaeXQe4DkTIjW/0x5BjvUjKzD8m9SCLSZTc0Z1zLcXMCxydwQmp8OhQpvxwywZJj/QweMEh861I5TP7CSZA0kROY8gTBw8alvDMlXSjRkrCIcJIN5OCB6NrQJLYdkZD8GtnsfUxGODSS3jx6fhdJkq+gGZIwmkShyEFgG7Xd3kSSX5Eh38n4YFJdPGTu/0ek297IX4sRUxsET5jJWJEsqTfQ1wK4tclndIYAqetEyTf5P+1MJfklkZJmDo0ksyW84TqyFemxN/I38xgkZ/Y4/Pxs7QZ02plKHo1EOv8koKIuK+mtkL6LlLcScV5l+n1dVqh52sb2bSrJ1xZkuCChhBaP+BrbqoT7+UttP18SzX41KSWUIyzC1gA/lyRKS7ZDbpU5+dYWTAw2rRpxX3L/Z+hm3bTUuKSlDjOuBHVDIxbDCoLe93e9n5NtQMqpJrCG5BuQezzbkXKHO0bvOutc5P0baCFFG1XvuqEzbYFLSRu3krAOhmTa4JrATMuxT5TMsnmlWCVGrmcT43Oy7qCEvtiCcciyKWxp6mSJYnCmB4a6ib81vy68mavX5aYbp51gezSWwnTYxF2c6UaMwYwvpUF9sCXMJ5zhoBo7gswU0LAwtK6LbnLRXlFPOpd9h0gBFYuYnLQDBxDRBqC+i2bsBmKXnbpz2zWxwTyKRQMnzcqk+5w4REtyH0dc7tlBc3TQMFsKpby62HdwJvLFWSAoEtoPAy7gvcfPo+7I170/UPZ1IMk6b41dN/RKGsYeAlMnC0rl4J1OKQqnkaksNOzRl90e1Ol527D41PWy7cZ01i+c3gy4RVDXvJ5tuGVcpxrBCCeKQhRF5gGUAH6Kcezlso3iWD+StRy26gHrSsrIX+k2DL2ObGwFI6eGiIa4HCm9xCesGHHsuNIKYozSm9owGHg09NIQRSUz3OXhTBxxgf0MA/6ovjTph3E07NuMY70i9xAScZNlO1Tk5V7XM2dH1IHt+9jR4ziYXlO4Mf1OiI0iFDhm3OzdSWJuWEnoDgEORrtvDeU6SF+4Bb9pC3Kaye3BAnwWI3VmpE9jhjePhqju9uIOQnpqmV82U/bEQzmKfWSLXu83FlqpDUg3ZGEPwocnQEzl27mNRSMJ7gyCAMpUL/QN0ojmYz2QfjoqX5p1e6wpEzXYniO0Y2kMUhfwpu7K985ZMvhrxVB6BMUAB00iK9WV/LNDtrldyXqV35J+lChP/4/f/IMDg4rzGKtZjBoR8rt/QtxyjZNjQ5aRwqGS1239B/sLry1GUIuT6KgAAAAASUVORK5CYII=">
+      <h1>ระบบบันทึกข้อมูลยานพาหนะ</h1>
+      <p>ศูนย์การทหารปืนใหญ่ ค่ายภูมิพล ปี 70</p>
+      <div class="counter">บันทึกแล้วในรอบนี้ <b id="count">0</b> รายการ</div>
+    </div>
+
+    <div class="body">
+      <!-- 1 -->
+      <section class="step">
+        <div class="step-title"><span class="num">1</span><h2>ประเภทแผ่นงาน</h2></div>
+        <div class="field">
+          <label for="sheet">เลือกประเภทแท็บแผ่นงาน</label>
+          <select id="sheet">
+            <optgroup label="รถยนต์">
+              <option value="รถยนต์ พ.อ.พิเศษ - พล.อ.">รถยนต์ พ.อ.พิเศษ - พล.อ.</option>
+              <option value="รถยนต์ ร.ต. - พ.อ.">รถยนต์ ร.ต. - พ.อ.</option>
+              <option value="รถยนต์ ส.ต.-จ.ส.อ.">รถยนต์ ส.ต.-จ.ส.อ.</option>
+              <option value="รถยนต์ พลเรือน">รถยนต์ พลเรือน</option>
+            </optgroup>
+            <optgroup label="รถจักรยานยนต์">
+              <option value="รถจักรยานยนต์ พ.อ.พิเศษ - พล.อ.">รถจักรยานยนต์ พ.อ.พิเศษ - พล.อ.</option>
+              <option value="รถจักรยานยนต์ ร.ต. - พ.อ.">รถจักรยานยนต์ ร.ต. - พ.อ.</option>
+              <option value="รถจักรยานยนต์ ส.ต.-จ.ส.อ.">รถจักรยานยนต์ ส.ต.-จ.ส.อ.</option>
+              <option value="รถจักรยานยนต์ พลเรือน">รถจักรยานยนต์ พลเรือน</option>
+            </optgroup>
+          </select>
+        </div>
+      </section>
+
+      <!-- 2 -->
+      <section class="step">
+        <div class="step-title"><span class="num">2</span><h2>ผู้บันทึกข้อมูล</h2></div>
+        <div class="field" id="f-officer">
+          <label for="officerName">เจ้าหน้าที่ของหน่วย (ผู้ลงข้อมูล)<span class="req">*</span></label>
+          <input type="text" id="officerName" autocomplete="name" placeholder="ชื่อ ยศ - สกุล หน่วย ของผู้บันทึก">
+          <div class="err">กรุณากรอกชื่อผู้บันทึก</div>
+        </div>
+      </section>
+
+      <!-- 3 -->
+      <section class="step">
+        <div class="step-title"><span class="num">3</span><h2>เจ้าของรถ</h2></div>
+        <div class="row">
+          <div class="field" id="f-rank">
+            <label for="rank">ยศ - ชื่อ เจ้าของรถ<span class="req">*</span></label>
+            <input type="text" id="rank" autocomplete="off" placeholder="เช่น พ.อ. สมชาย">
+            <div class="err">กรุณากรอกยศและชื่อ</div>
+          </div>
+          <div class="field" id="f-lastname">
+            <label for="lastname">นามสกุล เจ้าของรถ<span class="req">*</span></label>
+            <input type="text" id="lastname" autocomplete="off" placeholder="เช่น ใจดี">
+            <div class="err">กรุณากรอกนามสกุล</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field" id="f-unit">
+            <label for="unit">หน่วยสังกัด<span class="req">*</span></label>
+            <select id="unit"><option value="">-- เลือกหน่วย --</option></select>
+            <div class="err">กรุณาเลือกหน่วย</div>
+            <div class="hint warn" id="unitNote" style="display:none"></div>
+          </div>
+          <div class="field" id="f-status">
+            <label for="status">เลขบัตรประชาชน<span class="req">*</span></label>
+            <input type="text" id="status" inputmode="numeric" autocomplete="off" placeholder="เลขอารบิก 13 หลัก">
+            <div class="err">กรุณากรอกเลขบัตรประชาชน</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 -->
+      <section class="step">
+        <div class="step-title"><span class="num">4</span><h2>ข้อมูลรถ</h2></div>
+        <div class="row">
+          <div class="field" id="f-car">
+            <label for="car">ยี่ห้อรถ<span class="req">*</span></label>
+            <input type="text" id="car" autocomplete="off" placeholder="เช่น Toyota">
+            <div class="err">กรุณากรอกยี่ห้อรถ</div>
+          </div>
+          <div class="field" id="f-color">
+            <label for="color">สีรถ<span class="req">*</span></label>
+            <input type="text" id="color" autocomplete="off" placeholder="เช่น ดำ, ขาว">
+            <div class="err">กรุณากรอกสีรถ</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="field" id="f-plate">
+            <label for="plate">เลขทะเบียนรถ และจังหวัด<span class="req">*</span></label>
+            <input type="text" id="plate" autocomplete="off" placeholder="กข 1234 ลพบุรี">
+            <div class="err">กรุณากรอกเลขทะเบียนและจังหวัด</div>
+          </div>
+          <div class="field" id="f-phone">
+            <label for="phone">เบอร์โทรศัพท์<span class="req">*</span></label>
+            <input type="tel" id="phone" autocomplete="tel" placeholder="08X-XXXXXXX">
+            <div class="err">กรุณากรอกเบอร์โทรศัพท์</div>
+          </div>
+        </div>
+      </section>
+
+      <button class="btn-main" id="saveBtn" type="button">
+        <span class="spin"></span><span id="saveLabel">บันทึกข้อมูลเข้าแผ่นงาน</span>
+      </button>
+      <button class="btn-ghost" id="resetBtn" type="button">ล้างแบบฟอร์ม (กลับไปหน้าว่าง)</button>
+    </div>
+  </div>
+
+  <!-- ประวัติของผู้บันทึกคนนี้ -->
+  <details class="hist" id="hist" style="margin-top:16px">
+    <summary><span>รายการที่ฉันบันทึก (<span id="histCount">0</span>)</span><span class="chev">▾</span></summary>
+    <div class="hist-body">
+      <p class="hist-note" id="histNote"></p>
+      <ul class="hist-list" id="histList"></ul>
+      <div class="hist-actions">
+        <button type="button" id="csvBtn">ดาวน์โหลด CSV</button>
+        <button type="button" class="ghost" id="copyBtn">คัดลอก</button>
+        <button type="button" class="ghost" id="histClear">ล้างประวัติ</button>
+      </div>
+      <textarea id="csvBox" readonly rows="6" style="display:none;width:100%;margin-top:10px;padding:10px;font:inherit;font-size:14px;border:1.5px solid var(--khaki);border-radius:12px;background:var(--cream-2)"></textarea>
+    </div>
+  </details>
+</div>
+
+<div id="toast" role="status" aria-live="polite">
+  <span class="ic" id="toastIc"></span><span class="msg" id="toastMsg"></span>
+  <button type="button" id="toastClose" aria-label="ปิด">×</button>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ============ ตั้งค่า (แก้ตรงนี้) ============ */
+  // ลิงก์ Apps Script ที่รับข้อมูลลงชีท (ลิงก์ /exec ของการทำให้ใช้งานได้)
+  var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwVC3iXySsGn1a8L6axDjUWvB4ClU1UZMeY-w7j0_L2bCUVJFIjHwfBbo3so8XX2RC9/exec';
+
+  // ไฟล์รายชื่อหน่วย อยู่ใน repo เดียวกับหน้านี้ แก้ units.csv แล้วฟอร์มจะเปลี่ยนตาม
+  var UNITS_CSV_URL = 'units.csv';
+
+  // รายการสำรอง ใช้เมื่อโหลดจาก GitHub ไม่ได้
+  var FALLBACK_UNITS = [
+    'กชฝ.ศป.', 'กบร.ศป.', 'กรม นร.รร.ป.ศป.', 'กวก.ศป.', 'กศ.รร.ป.ศป.',
+    'กสยป.ศป.', 'บก.ศป.', 'ป. 1 พัน. 31 รอ.', 'ปตอ.1 พัน.3', 'พัน.ชบร.บ.ทบ.',
+    'พัน.บร.กบร.ศป.', 'พัน.ป.ศป.', 'รร.ป.ศป.', 'รร.สองเหล่าสร้างฯ',
+    'หน่วยตรวจโรค ศป.', 'ติดต่อราชการ'
+  ];
+  /* ============================================ */
+
+  var $ = function (id) { return document.getElementById(id); };
+  var saved = 0;
+
+  /* ---------- เก็บข้อมูลในเครื่อง (ไม่พังถ้าเบราว์เซอร์ไม่ให้ใช้) ---------- */
+  var mem = {};
+  function lsGet(k) { try { return window.localStorage.getItem(k); } catch (e) { return mem[k] || null; } }
+  function lsSet(k, v) { try { window.localStorage.setItem(k, v); } catch (e) { mem[k] = v; } }
+
+  /* ---------- แถบแจ้งผล ---------- */
+  var toastTimer = null;
+  function toast(kind, text) {
+    clearTimeout(toastTimer);
+    var t = $('toast');
+    t.className = kind + ' show';
+    $('toastIc').textContent = kind === 'ok' ? '✓' : '!';
+    $('toastMsg').textContent = text;
+    if (kind === 'ok') toastTimer = setTimeout(hideToast, 3200);
+  }
+  function hideToast() { $('toast').classList.remove('show'); }
+  $('toastClose').addEventListener('click', hideToast);
+
+  /* ---------- รายชื่อหน่วย (CSV จาก GitHub) ---------- */
+  function parseCsv(text) {
+    text = text.replace(/^\uFEFF/, '');
+    var out = [];
+    text.split(/\r?\n/).forEach(function (line) {
+      line = line.trim();
+      if (!line) return;
+      var first;
+      if (line.charAt(0) === '"') {
+        var m = line.match(/^"((?:[^"]|"")*)"/);
+        first = m ? m[1].replace(/""/g, '"') : line;
+      } else {
+        first = line.split(',')[0];
+      }
+      first = first.trim();
+      if (first) out.push(first);
+    });
+    if (out.length && /^(หน่วย|หน่วยสังกัด|unit|units)$/i.test(out[0])) out.shift();
+    var seen = {};
+    return out.filter(function (u) { if (seen[u]) return false; seen[u] = 1; return true; });
+  }
+
+  function fillUnits(list, keep) {
+    var sel = $('unit');
+    sel.innerHTML = '';
+    var o0 = document.createElement('option');
+    o0.value = ''; o0.textContent = '-- เลือกหน่วย --';
+    sel.appendChild(o0);
+    list.forEach(function (u) {
+      var o = document.createElement('option');
+      o.value = u; o.textContent = u;
+      sel.appendChild(o);
+    });
+    if (keep && list.indexOf(keep) !== -1) sel.value = keep;
+  }
+
+  function loadUnits() {
+    fillUnits(FALLBACK_UNITS);
+    var url = UNITS_CSV_URL + '?t=' + Math.floor(Date.now() / 60000);
+    fetch(url, { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+      .then(function (t) {
+        var list = parseCsv(t);
+        if (!list.length) throw new Error('empty');
+        fillUnits(list, $('unit').value);
+      })
+      .catch(function () {
+        var n = $('unitNote');
+        n.textContent = 'โหลดรายชื่อหน่วยล่าสุดไม่ได้ ใช้รายการสำรองแทน';
+        n.style.display = 'block';
+      });
+  }
+
+  /* ---------- ตรวจช่องบังคับ ---------- */
+  var REQUIRED = [
+    { id: 'officerName', box: 'f-officer' },
+    { id: 'rank',        box: 'f-rank' },
+    { id: 'lastname',    box: 'f-lastname' },
+    { id: 'status',      box: 'f-status' },
+    { id: 'unit',        box: 'f-unit' },
+    { id: 'car',         box: 'f-car' },
+    { id: 'color',       box: 'f-color' },
+    { id: 'plate',       box: 'f-plate' },
+    { id: 'phone',       box: 'f-phone' }
+  ];
+  function validate() {
+    var firstBad = null;
+    REQUIRED.forEach(function (r) {
+      var ok = $(r.id).value.trim() !== '';
+      $(r.box).classList.toggle('invalid', !ok);
+      if (!ok && !firstBad) firstBad = r;
+    });
+    if (firstBad) {
+      var el = $(firstBad.id);
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(function () { try { el.focus({ preventScroll: true }); } catch (e) { el.focus(); } }, 350);
+    }
+    return !firstBad;
+  }
+  REQUIRED.forEach(function (r) {
+    var ev = $(r.id).tagName === 'SELECT' ? 'change' : 'input';
+    $(r.id).addEventListener(ev, function () {
+      if ($(r.id).value.trim() !== '') $(r.box).classList.remove('invalid');
+    });
+  });
+
+  /* ---------- บันทึก ---------- */
+  function setBusy(b) {
+    $('saveBtn').disabled = b;
+    $('saveBtn').classList.toggle('loading', b);
+    $('saveLabel').textContent = b ? 'กำลังบันทึกข้อมูล...' : 'บันทึกข้อมูลเข้าแผ่นงาน';
+  }
+
+  function save() {
+    if (!validate()) { toast('bad', 'กรุณากรอกช่องที่มีดอกจันสีแดงให้ครบก่อนครับ'); return; }
+
+    var data = {
+      sheet:   $('sheet').value,
+      officer: $('officerName').value.trim(),
+      rank:    $('rank').value.trim(),
+      lastname: $('lastname').value.trim(),
+      status:  $('status').value.trim(),
+      unit:    $('unit').value.trim(),
+      car:     $('car').value.trim(),
+      color:   $('color').value.trim(),
+      plate:   $('plate').value.trim(),
+      phone:   $('phone').value.trim()
+    };
+
+    hideToast();
+    setBusy(true);
+
+    var ctrl = ('AbortController' in window) ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 30000);
+
+    fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },   // แบบนี้เบราว์เซอร์ไม่ส่งคำขอตรวจสอบล่วงหน้า (preflight)
+      body: JSON.stringify(data),
+      signal: ctrl ? ctrl.signal : undefined
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        clearTimeout(timer);
+        setBusy(false);
+        if (res && res.result === 'success') {
+          saved++; $('count').textContent = saved;
+          try { addHistory(data.officer, data.rank + ' ' + data.lastname); } catch (e) { /* ประวัติในเครื่องพลาด ไม่กระทบการบันทึก */ }
+          // ล้างเฉพาะข้อมูลรถ (ข้อมูลเจ้าของรถยังอยู่ เหมือนเดิม)
+          ['car', 'color', 'plate', 'phone'].forEach(function (id) { $(id).value = ''; });
+          toast('ok', 'บันทึกข้อมูลเข้าแผ่นงานเรียบร้อยแล้ว');
+        } else {
+          toast('bad', 'บันทึกไม่สำเร็จ: ' + (res && res.message ? res.message : 'ไม่ทราบสาเหตุ'));
+        }
+      })
+      .catch(function () {
+        clearTimeout(timer);
+        setBusy(false);
+        toast('bad', 'ส่งข้อมูลไม่สำเร็จ อาจบันทึกไปแล้ว ให้ดูในชีทก่อนกดบันทึกซ้ำ ถ้ายังไม่ขึ้น ตรวจอินเทอร์เน็ตแล้วลองใหม่');
+      });
+  }
+  $('saveBtn').addEventListener('click', save);
+
+  /* ---------- ล้างฟอร์ม (กดสองครั้ง) ---------- */
+  var resetTimer = null;
+  $('resetBtn').addEventListener('click', function () {
+    var b = $('resetBtn');
+    if (!b.classList.contains('confirm')) {
+      b.classList.add('confirm');
+      b.textContent = 'กดอีกครั้งเพื่อยืนยันการล้างข้อมูลทั้งหมด';
+      resetTimer = setTimeout(cancelReset, 4000);
+      return;
+    }
+    cancelReset();
+    $('sheet').selectedIndex = 0;
+    $('unit').value = '';
+    document.querySelectorAll('input[type="text"], input[type="tel"]').forEach(function (i) { i.value = ''; });
+    document.querySelectorAll('.field.invalid').forEach(function (f) { f.classList.remove('invalid'); });
+    $('officerName').value = '';
+    renderHistory();
+    toast('ok', 'ล้างแบบฟอร์มแล้ว พร้อมเริ่มใหม่');
+  });
+  function cancelReset() {
+    clearTimeout(resetTimer);
+    var b = $('resetBtn');
+    b.classList.remove('confirm');
+    b.textContent = 'ล้างแบบฟอร์ม (กลับไปหน้าว่าง)';
+  }
+
+  /* ---------- ประวัติ: เห็นเฉพาะที่ผู้บันทึกคนนี้ลงไว้ (เก็บในเครื่องนี้เท่านั้น) ---------- */
+  var HKEY = 'vehicle_hist_v1';
+  function readAll() { try { return JSON.parse(lsGet(HKEY) || '[]'); } catch (e) { return []; } }
+  function norm(s) { return String(s || '').replace(/\s+/g, ' ').trim().toLowerCase(); }
+  function addHistory(officer, name) {
+    var all = readAll();
+    all.unshift({ o: norm(officer), n: name, t: Date.now() });
+    lsSet(HKEY, JSON.stringify(all.slice(0, 500)));
+    renderHistory();
+  }
+  function mine() {
+    var o = norm($('officerName').value);
+    return o ? readAll().filter(function (e) { return e.o === o; }) : [];
+  }
+  function fmt(ts) {
+    var d = new Date(ts);
+    var p = function (n) { return n < 10 ? '0' + n : '' + n; };
+    return p(d.getDate()) + '/' + p(d.getMonth() + 1) + '/' + (d.getFullYear() + 543) + ' ' + p(d.getHours()) + ':' + p(d.getMinutes());
+  }
+  function renderHistory() {
+    var list = mine(), ul = $('histList');
+    ul.innerHTML = '';
+    $('histCount').textContent = list.length;
+    $('histNote').textContent = $('officerName').value.trim()
+      ? 'แสดงเฉพาะรายการที่ผู้บันทึกชื่อนี้ลงไว้ เห็นได้เฉพาะในเครื่องนี้'
+      : 'กรอกชื่อผู้บันทึกก่อน จึงจะเห็นรายการที่ลงไว้';
+    if (!list.length) {
+      var e = document.createElement('li'); e.className = 'hist-empty'; e.style.display = 'block';
+      e.textContent = 'ยังไม่มีรายการ';
+      ul.appendChild(e);
+    }
+    list.forEach(function (x) {
+      var li = document.createElement('li');
+      var a = document.createElement('span'); a.textContent = x.n;
+      var b = document.createElement('span'); b.className = 't'; b.textContent = fmt(x.t);
+      li.appendChild(a); li.appendChild(b); ul.appendChild(li);
+    });
+    $('csvBtn').disabled = !list.length;
+    $('histClear').disabled = !list.length;
+  }
+  $('officerName').addEventListener('input', renderHistory);
+  $('officerName').addEventListener('change', function () { lsSet('vehicle_officer_v1', $('officerName').value.trim()); });
+
+  function csvText() {
+    var list = mine();
+    var q = function (s) { return '"' + String(s).replace(/"/g, '""') + '"'; };
+    var rows = ['ลำดับ,ชื่อเจ้าของรถ,วันเวลาที่บันทึก'];
+    list.slice().reverse().forEach(function (x, i) { rows.push([i + 1, q(x.n), q(fmt(x.t))].join(',')); });
+    return rows.join('\r\n');
+  }
+  $('copyBtn').addEventListener('click', function () {
+    if (!mine().length) return;
+    var text = csvText();
+    var showBox = function () {
+      var b = $('csvBox'); b.value = text; b.style.display = 'block'; b.focus(); b.select();
+      toast('ok', 'เลือกข้อความไว้ให้แล้ว กดคัดลอกได้เลย');
+    };
+    try {
+      navigator.clipboard.writeText(text).then(function () { toast('ok', 'คัดลอกรายการแล้ว'); }, showBox);
+    } catch (e) { showBox(); }
+  });
+  $('csvBtn').addEventListener('click', function () {
+    var list = mine();
+    if (!list.length) return;
+    var blob = new Blob(['\uFEFF' + csvText()], { type: 'text/csv;charset=utf-8' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'รายการที่บันทึก.csv';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+  });
+
+  var clearTimer = null;
+  $('histClear').addEventListener('click', function () {
+    var b = $('histClear');
+    if (!b.classList.contains('confirm')) {
+      b.classList.add('confirm'); b.textContent = 'กดอีกครั้งเพื่อยืนยัน';
+      clearTimer = setTimeout(function () { b.classList.remove('confirm'); b.textContent = 'ล้างประวัติ'; }, 4000);
+      return;
+    }
+    clearTimeout(clearTimer);
+    var o = norm($('officerName').value);
+    lsSet(HKEY, JSON.stringify(readAll().filter(function (e) { return e.o !== o; })));
+    b.classList.remove('confirm'); b.textContent = 'ล้างประวัติ';
+    renderHistory();
+  });
+
+  /* ---------- เริ่มต้น ---------- */
+  var last = lsGet('vehicle_officer_v1');
+  if (last) $('officerName').value = last;
+  loadUnits();
+  renderHistory();
+})();
+</script>
+
+</body>
+</html>
